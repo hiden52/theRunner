@@ -13,12 +13,14 @@ enum RoadLine
 public class Runner : MonoBehaviour
 {
     [SerializeField] RoadLine currentLine;
+    [SerializeField] Animator animator;
     [SerializeField] int positionX = 4;
     [SerializeField] Rigidbody rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -37,6 +39,7 @@ public class Runner : MonoBehaviour
             if(currentLine != RoadLine.LEFT)
             {
                 currentLine--;
+                animator.Play("Avoid Left");
             }
         }
         if (Input.GetKeyUp(KeyCode.D))
@@ -44,6 +47,7 @@ public class Runner : MonoBehaviour
             if (currentLine != RoadLine.RIGHT)
             {
                 currentLine++;
+                animator.Play("Avoid Right");
             }
         }
     }
