@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void Execute()
     {
-        SceneManager.LoadScene("Game");
+        StartCoroutine(SceneryManager.Instance.AsynchLoad(1));
     }
     public void Exit()
     {
