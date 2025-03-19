@@ -16,6 +16,7 @@ public class Runner : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] int positionX = 4;
     [SerializeField] Rigidbody rb;
+    [SerializeField] float avoidSpeed = 20f;
 
     private void Awake()
     {
@@ -26,10 +27,20 @@ public class Runner : MonoBehaviour
     private void OnEnable()
     {
         rb.freezeRotation = true;
+        //InputManager.Instance.action += onKeyUpdate;
+        InputManager.Instance.pressedKeyA += AvoidLeft;
+        InputManager.Instance.pressedKeyD += AvoidRight;
+
+    }
+    private void OnDisable()
+    {
+        //InputManager.Instance.action -= onKeyUpdate;
+        InputManager.Instance.pressedKeyA -= AvoidLeft;
+        InputManager.Instance.pressedKeyD -= AvoidRight;
     }
     private void Update()
     {
-        onKeyUpdate();
+        
     }
 
     void onKeyUpdate()
@@ -52,6 +63,23 @@ public class Runner : MonoBehaviour
         }
     }
 
+    void AvoidLeft()
+    {
+        if (currentLine != RoadLine.LEFT)
+        {
+            currentLine--;
+            animator.Play("Avoid Left");
+        }
+    }
+    void AvoidRight()
+    {
+        if (currentLine != RoadLine.RIGHT)
+        {
+            currentLine++;
+            animator.Play("Avoid Right");
+        }
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -60,6 +88,6 @@ public class Runner : MonoBehaviour
 
     void Move()
     {
-        rb.position = new Vector3((int)currentLine * -positionX, 0, 5);
+        rb.position = Vector3.Lerp(rb.position, new Vector3((int)currentLine * -positionX, 0, 5), Time.deltaTime * avoidSpeed);
     }
 }
