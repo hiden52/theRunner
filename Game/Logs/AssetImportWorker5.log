@@ -1,0 +1,381 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.14f1 (eff2de9070d8) revision 15725278'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Education' Language: 'ko' Physical Memory: 16297 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/Administrator/Desktop/theRunner/Game
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+53109
+Successfully changed project path to: C:/Users/Administrator/Desktop/theRunner/Game
+C:/Users/Administrator/Desktop/theRunner/Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [5560] Host "[IP] 192.168.0.219 [Port] 0 [Flags] 2 [Guid] 2582932973 [EditorId] 2582932973 [Version] 1048832 [Id] WindowsEditor(7,I-09) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [5560] Host "[IP] 192.168.0.219 [Port] 0 [Flags] 2 [Guid] 2582932973 [EditorId] 2582932973 [Version] 1048832 [Id] WindowsEditor(7,I-09) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+Refreshing native plugins compatible for Editor in 5.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.14f1 (eff2de9070d8)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Administrator/Desktop/theRunner/Game/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 (ID=0x2184)
+    Vendor:   NVIDIA
+    VRAM:     5980 MB
+    Driver:   31.0.15.3623
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003983 seconds.
+- Loaded All Assemblies, in  0.289 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.218 seconds
+Domain Reload Profiling: 507ms
+	BeginReloadAssembly (85ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (119ms)
+		LoadAssemblies (84ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (118ms)
+			TypeCache.Refresh (116ms)
+				TypeCache.ScanAssembly (105ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (219ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (167ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (111ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.486 seconds
+Refreshing native plugins compatible for Editor in 1.57 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.628 seconds
+Domain Reload Profiling: 1114ms
+	BeginReloadAssembly (123ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (290ms)
+		LoadAssemblies (212ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (150ms)
+			TypeCache.Refresh (132ms)
+				TypeCache.ScanAssembly (120ms)
+			ScanForSourceGeneratedMonoScriptInfo (13ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (629ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (492ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (47ms)
+			ProcessInitializeOnLoadAttributes (416ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3300 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 43 unused Assets / (130.1 KB). Loaded Objects now: 3765.
+Memory consumption went from 132.1 MB to 132.0 MB.
+Total: 3.714500 ms (FindLiveObjects: 0.451200 ms CreateObjectMapping: 0.346500 ms MarkObjects: 2.781500 ms  DeleteObjects: 0.133900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1876.735757 seconds.
+  path: Assets/Sounds/Setting Button Sound.mp3
+  artifactKey: Guid(362dfeab3c2793e478a0b4830c622aa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Setting Button Sound.mp3 using Guid(362dfeab3c2793e478a0b4830c622aa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4be2ad9e47a1f33e0f3d11d96d2ecc68') in 0.075909 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 199.575662 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Beige 1.mat
+  artifactKey: Guid(a8c33543fc2059e4ba389a887e077ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Beige 1.mat using Guid(a8c33543fc2059e4ba389a887e077ea5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54ed6cc3976f3df7f3986130b57cb5b8') in 0.045876 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Steel 1.mat
+  artifactKey: Guid(4c407642dd6ec5e4cb4c6ff3b742a84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Steel 1.mat using Guid(4c407642dd6ec5e4cb4c6ff3b742a84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f4fc7c611ae4d936b5b8f06fbdcea44') in 0.019224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 6c.mat
+  artifactKey: Guid(5c737ae6538fe16428bfcbb329cabee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 6c.mat using Guid(5c737ae6538fe16428bfcbb329cabee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a0d7ac9b6bc62c05a6db0566fd5ebc') in 0.008456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Full_Yellow.mat
+  artifactKey: Guid(eeb642b20697c874595465bcb3ee711e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Full_Yellow.mat using Guid(eeb642b20697c874595465bcb3ee711e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '527e9739406cf76e070de014c6ee8155') in 0.005573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 7.mat
+  artifactKey: Guid(568084d740d9e1b4abc0b68aee9f4ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 7.mat using Guid(568084d740d9e1b4abc0b68aee9f4ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '003e056226e132f37ad2a89cd25fee93') in 0.007430 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Red.mat
+  artifactKey: Guid(a14d011ae93b8f348bb995bebb356bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Red.mat using Guid(a14d011ae93b8f348bb995bebb356bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a82fdbd9a5b57df3e5e399e5fa3de622') in 0.005532 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 4.mat
+  artifactKey: Guid(6cb244efaeabaee4ab0956e73f961e0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 4.mat using Guid(6cb244efaeabaee4ab0956e73f961e0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47afa709398347ed0ebb93a3cbafadef') in 0.006726 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 9.mat
+  artifactKey: Guid(ee94fb380d207de4aa0b5df784a92954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 9.mat using Guid(ee94fb380d207de4aa0b5df784a92954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801e106d789391239c9c64ba7118c575') in 0.005328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 1.mat
+  artifactKey: Guid(bde3563c523be224dbec530c0191c84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 1.mat using Guid(bde3563c523be224dbec530c0191c84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd77e7d270cf67a1e9e03a3508ebc6e9') in 0.005412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Full_Green.mat
+  artifactKey: Guid(0041ffc4fb94be94d9ba04007a6ec6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Full_Green.mat using Guid(0041ffc4fb94be94d9ba04007a6ec6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07763955dc61dccbe7703362cdd140a9') in 0.006212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Orange.mat
+  artifactKey: Guid(d239c9c3cf3cf6f4ea1ab54cf09bf36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Orange.mat using Guid(d239c9c3cf3cf6f4ea1ab54cf09bf36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b59088c301c3f2e292e0536aebed5b7') in 0.005377 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 3.mat
+  artifactKey: Guid(863471da8c8244341b0bca21f4284991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 3.mat using Guid(863471da8c8244341b0bca21f4284991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9244cadd2dbbdb5cd305396fd24a0513') in 0.005418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 4b.mat
+  artifactKey: Guid(bd72573cd3ee55545a3cdfa5a0acf15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 4b.mat using Guid(bd72573cd3ee55545a3cdfa5a0acf15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e161273b6e2bbed9905c325ec98932') in 0.005258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 6b.mat
+  artifactKey: Guid(deccdfde3de90fe4eb87be7ee8a76bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 6b.mat using Guid(deccdfde3de90fe4eb87be7ee8a76bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '720efe4d5d1b072c3365d032655a6cde') in 0.005860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Materials/Gray 1.mat
+  artifactKey: Guid(35842900d93ad544cbd375050176c6a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/Gray 1.mat using Guid(35842900d93ad544cbd375050176c6a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19714d98798396788629a40f7c9dacc') in 0.004018 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Low Poly Obstacles/Materials/IconRoad 5.mat
+  artifactKey: Guid(7f942487eb6e6134f939915d17316579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Materials/IconRoad 5.mat using Guid(7f942487eb6e6134f939915d17316579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '526e90024b0e7195a42816b64388279c') in 0.005532 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.348178 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/LampPost-2.prefab
+  artifactKey: Guid(e862a2795adc9564f92160c9ccf84f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/LampPost-2.prefab using Guid(e862a2795adc9564f92160c9ccf84f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76e8b55d155688440716b70313941f9') in 0.017491 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-3.prefab
+  artifactKey: Guid(e3d1d514935b8c44b9d50eb75b1cccd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-3.prefab using Guid(e3d1d514935b8c44b9d50eb75b1cccd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de801a9de7742a6fbc0722d7dd353c4d') in 0.005899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/StreetSign-1.prefab
+  artifactKey: Guid(c8e29b986b943f548bca7e79c17c6446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/StreetSign-1.prefab using Guid(c8e29b986b943f548bca7e79c17c6446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81e856cd09d7b56e3c007b55e7af2bb') in 0.014841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 86
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/WarningTriangles.prefab
+  artifactKey: Guid(802c0efe3462ff9408f9032b674ae03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/WarningTriangles.prefab using Guid(802c0efe3462ff9408f9032b674ae03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21099f2687393730bbbc14e6ed30cad2') in 0.005518 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/ParkingBollard.prefab
+  artifactKey: Guid(84062c9556b3cef4f8aa9a210cba155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/ParkingBollard.prefab using Guid(84062c9556b3cef4f8aa9a210cba155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7d0e990960a0b683eda4cb1424b1062') in 0.005066 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/TrashCan.prefab
+  artifactKey: Guid(3028e9edef244d648af9e8e5dc609fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/TrashCan.prefab using Guid(3028e9edef244d648af9e8e5dc609fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f62224cf8b7b3376b31af9bc78da7383') in 0.005100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-2.prefab
+  artifactKey: Guid(0fcf5ed4320cbf34eb528faecdc7565d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-2.prefab using Guid(0fcf5ed4320cbf34eb528faecdc7565d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf56973f16c60ffd8518eabce10dff64') in 0.006814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-1.prefab
+  artifactKey: Guid(66498b191d3c64e4ea56d4ed50eabbbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Obstacles/Prefabs/Road/RoadBollard-1.prefab using Guid(66498b191d3c64e4ea56d4ed50eabbbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9360bf2cca2e61af878c2493fe7b3c47') in 0.005910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 23
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
