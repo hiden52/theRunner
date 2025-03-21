@@ -18,7 +18,15 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
+        if (other.name == "Runner")
+        {
+            GameManager.Instance.StopStage();
+
+        }
+        else
+        {
+            ObstacleManager.Instance.DisableObstacle(gameObject);
+        }
     }
 
 

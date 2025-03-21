@@ -17,11 +17,13 @@ public class Runner : MonoBehaviour
     [SerializeField] int positionX = 4;
     [SerializeField] Rigidbody rb;
     [SerializeField] float avoidSpeed = 20f;
+    private bool alive;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        alive = true;
     }
 
     private void OnEnable()
@@ -82,12 +84,32 @@ public class Runner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (GameManager.Instance.Playing)
+        {
+            Move();
+        }
+        else
+        {
+            if(alive)
+            {
+                Die();
+            }
+        }
+        
+       
     }
 
 
     void Move()
     {
         rb.position = Vector3.Lerp(rb.position, new Vector3((int)currentLine * -positionX, 0, 5), Time.deltaTime * avoidSpeed);
+    }
+
+    void Die()
+    {
+        rb.freezeRotation = false;
+        alive = false;
+        rb.AddRelativeForce(transform.forward * 5, ForceMode.Impulse);
+        animator.Play("Death");
     }
 }

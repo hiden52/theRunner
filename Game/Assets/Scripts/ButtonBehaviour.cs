@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ButtonBehaviour : MonoBehaviour
 {
     [SerializeField] Text text;
+    [SerializeField] Sound sound;
 
     private void Awake()
     {
