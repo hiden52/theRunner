@@ -31,8 +31,8 @@ public class RoadManager : MonoBehaviour
     {
         if (GameManager.Instance.Playing)
         {
-            distance += GameManager.Instance.speed * Time.fixedDeltaTime;
-            transform.position += new Vector3(0, 0, GameManager.Instance.speed * Time.fixedDeltaTime);
+            distance += GameManager.Instance.Speed * Time.fixedDeltaTime;
+            transform.position += new Vector3(0, 0, GameManager.Instance.Speed * Time.fixedDeltaTime);
         }
 
         //if((Mathf.Floor(distance / 40) % 4) != currentRoad)

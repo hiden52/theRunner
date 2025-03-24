@@ -17,12 +17,15 @@ public class Runner : MonoBehaviour
     [SerializeField] int positionX = 4;
     [SerializeField] Rigidbody rb;
     [SerializeField] float avoidSpeed = 20f;
+    [SerializeField] GameObject followTarget;
+    [SerializeField] CapsuleCollider capsule;
     private bool alive;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        capsule = GetComponent<CapsuleCollider>();
         alive = true;
     }
 
@@ -40,9 +43,19 @@ public class Runner : MonoBehaviour
         InputManager.Instance.pressedKeyA -= AvoidLeft;
         InputManager.Instance.pressedKeyD -= AvoidRight;
     }
-    private void Update()
+    private void LateUpdate()
     {
-        
+        followTarget.transform.position = transform.position;
+        if(!alive)
+        {
+            //followTarget.transform.position = Vector3.Lerp(
+            //    followTarget.transform.position, 
+            //    transform.position + Vector3.forward * capsule.height, 
+            //    Time.deltaTime * avoidSpeed
+            //    );
+
+            followTarget.transform.position = transform.position + Vector3.forward * capsule.height;
+        }
     }
 
     void onKeyUpdate()
@@ -107,9 +120,10 @@ public class Runner : MonoBehaviour
 
     void Die()
     {
-        rb.freezeRotation = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         alive = false;
         rb.AddRelativeForce(transform.forward * 5, ForceMode.Impulse);
         animator.Play("Death");
+
     }
 }

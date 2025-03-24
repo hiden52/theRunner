@@ -362,6 +362,7 @@
 "Assets/Scripts/Managers/MenuManager.cs"
 "Assets/Scripts/Managers/MouseManager.cs"
 "Assets/Scripts/Managers/Obstacle Manager.cs"
+"Assets/Scripts/Managers/ResourcesManager.cs"
 "Assets/Scripts/Managers/RoadManager.cs"
 "Assets/Scripts/Managers/SceneryManager.cs"
 "Assets/Scripts/Obstacle.cs"
@@ -371,7 +372,7 @@
 "Assets/Scripts/Runner.cs"
 "Assets/Scripts/Singleton.cs"
 "Assets/Scripts/Sound.cs"
-"Assets/Scripts/Timer.cs"
+"Assets/Scripts/Watch.cs"
 -langversion:9.0
 
 /deterministic

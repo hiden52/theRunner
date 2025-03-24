@@ -6,7 +6,11 @@ using UnityEngine.UI;
 // Stage Manager로 플레이 관리
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] public float speed = 20;
+    [SerializeField] private float speed;
+    [SerializeField] public float Speed { get { return speed; } }
+    [SerializeField] private float respawnTime;
+    [SerializeField] public float RespawnTime { get { return respawnTime; } }
+
     [SerializeField] public float gameTime;
     [SerializeField] Text timeText;
     [SerializeField] bool playing;
@@ -27,6 +31,8 @@ public class GameManager : Singleton<GameManager>
     {
         playing = true;
         gameTime = 0;
+        speed = 20;
+        respawnTime = 2.5f;
     }
 
     void ClacTime()
@@ -46,6 +52,12 @@ public class GameManager : Singleton<GameManager>
     {
         playing = false;
         MouseManager.Instance.SetState(0);
+    }
+
+    public void IncreasGameLevel()
+    {
+        respawnTime = Mathf.Clamp(respawnTime - 0.2f, 1, 3);
+        speed = Mathf.Clamp(speed + 2, 10, 50);
     }
 
     

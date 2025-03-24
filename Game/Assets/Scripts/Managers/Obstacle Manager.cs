@@ -11,6 +11,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     [SerializeField] int countActivated;
     //[SerializeField] float speed = 10f;
     [SerializeField] public float spawnZ = -30f;
+    //[SerializeField] public float respawnTime = 2.5f;
 
     int cap = 10;
 
@@ -27,7 +28,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     {
         if(GameManager.Instance.Playing)
         { 
-            transform.position += new Vector3(0, 0, GameManager.Instance.speed * Time.fixedDeltaTime);
+            transform.position += new Vector3(0, 0, GameManager.Instance.Speed * Time.fixedDeltaTime);
         }
     }
 
@@ -35,7 +36,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     {
         if (prefabs != null)
         {
-            prefabs = Resources.LoadAll<GameObject>("Obtacles");
+            prefabs = ResourcesManager.Instance.LoadAll<GameObject>("Obtacles");
         }
 
         for (int i = 0; i < defaultNumObst; i++)
@@ -55,7 +56,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
 
     private void CreateObs()
     {
-        GameObject obj = Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
+        GameObject obj = ResourcesManager.Instance.Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
         obj.SetActive(false);
 
         obstacles.Add(obj);
@@ -83,12 +84,14 @@ public class ObstacleManager : Singleton<ObstacleManager>
             }
             else
             {
-                obstacles[idx].SetActive(true);
-                countActivated++;
+                if (GameManager.Instance.Playing)
+                {
+                    obstacles[idx].SetActive(true);
+                    countActivated++;
 
-                idx = Random.Range(0, obstacles.Count);
-
-                yield return new WaitForSeconds(2.5f);
+                    idx = Random.Range(0, obstacles.Count);
+                }
+                yield return new WaitForSeconds(GameManager.Instance.RespawnTime);
             }
         }
     }

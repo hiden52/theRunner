@@ -28,6 +28,10 @@ public class Obstacle : MonoBehaviour
             ObstacleManager.Instance.DisableObstacle(gameObject);
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if(collision.gameObject.com)
+    }
 
 
 
