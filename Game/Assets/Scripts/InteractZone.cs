@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class InteractZone : MonoBehaviour
 {
-    [SerializeField] Road road;
+    [SerializeField] IHitable reposObj;
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        road = other.gameObject.GetComponent<Road>();
-        road?.Activate();
+        reposObj = other.gameObject.GetComponent<IHitable>();
+        reposObj?.Activate();
     }
 }

@@ -44,10 +44,11 @@ public class Watch : MonoBehaviour
                 if(!levelUp && (s > 0) && (s % 5 == 0))
                 {
                     levelUp = true;
+                    SpeedManager.Instance.SpeedUp();
                     GameManager.Instance.IncreasGameLevel();
                     
                 }
-                else if (s % 10 != 0)
+                else if (s % 5 != 0)
                 {
                     levelUp = false;
                 }

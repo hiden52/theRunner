@@ -19,6 +19,9 @@ public class Runner : MonoBehaviour
     [SerializeField] float avoidSpeed = 20f;
     [SerializeField] GameObject followTarget;
     [SerializeField] CapsuleCollider capsule;
+    private Vector3 defaultPos;
+    private Quaternion defaultColliderRotate;
+
     private bool alive;
 
     private void Awake()
@@ -27,6 +30,12 @@ public class Runner : MonoBehaviour
         animator = GetComponent<Animator>();
         capsule = GetComponent<CapsuleCollider>();
         alive = true;
+    }
+
+    private void Start()
+    {
+        defaultPos = transform.position;
+        defaultColliderRotate = GetComponent<CapsuleCollider>().transform.rotation;
     }
 
     private void OnEnable()
@@ -106,6 +115,7 @@ public class Runner : MonoBehaviour
             if(alive)
             {
                 Die();
+                InputManager.Instance.pressedKeySpace += ResetRunner;
             }
         }
         
@@ -120,10 +130,21 @@ public class Runner : MonoBehaviour
 
     void Die()
     {
-        rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        rb.freezeRotation = false;
+        //rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         alive = false;
-        rb.AddRelativeForce(transform.forward * 5, ForceMode.Impulse);
+        rb.AddRelativeForce(transform.forward * 5 + transform.up * 2, ForceMode.Impulse);
         animator.Play("Death");
 
+    }
+
+    public void ResetRunner()
+    {
+        //transform.position = defaultPos;
+        //currentLine = RoadLine.CENTER;
+        //animator.Rebind();
+        //GetComponent<CapsuleCollider>().transform.rotation = defaultColliderRotate;
+
+        InputManager.Instance.pressedKeySpace -= ResetRunner;
     }
 }

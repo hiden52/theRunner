@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae497cf0d999f3346b7af15fda38a4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  gameSpeed: 0
   respawnTime: 0
   gameTime: 0
   timeText: {fileID: 0}

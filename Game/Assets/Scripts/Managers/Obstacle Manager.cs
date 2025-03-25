@@ -9,8 +9,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     //[SerializeField] List<string> prefabNames = new List<string>();     // 하나하나 이름을 써넣는 건 귀찮기 때문에 Resource.LoadAll을 이용하는게 편한듯 
     [SerializeField] int defaultNumObst = 5;
     [SerializeField] int countActivated;
-    //[SerializeField] float speed = 10f;
-    [SerializeField] public float spawnZ = -30f;
+    [SerializeField] public float spawnZ = -120f;
     //[SerializeField] public float respawnTime = 2.5f;
 
     int cap = 10;
@@ -21,14 +20,14 @@ public class ObstacleManager : Singleton<ObstacleManager>
         countActivated = 0;
         Create();
 
-        StartCoroutine(ActiveObstacle());
+        ActivateObstacles();
     }
 
     private void FixedUpdate()
     {
         if(GameManager.Instance.Playing)
         { 
-            transform.position += new Vector3(0, 0, GameManager.Instance.Speed * Time.fixedDeltaTime);
+            transform.position += new Vector3(0, 0, SpeedManager.Instance.Speed * Time.fixedDeltaTime);
         }
     }
 
@@ -53,6 +52,16 @@ public class ObstacleManager : Singleton<ObstacleManager>
         //}
         #endregion
     }
+    public void ResetObstacles()
+    {
+        foreach (GameObject obstacle in obstacles)
+        {
+            Destroy(obstacle);
+        }
+        obstacles.Clear();
+
+        Create();
+    }
 
     private void CreateObs()
     {
@@ -68,7 +77,11 @@ public class ObstacleManager : Singleton<ObstacleManager>
 
         while (true)
         {
-            if (obstacles[idx].activeSelf)
+            if (!GameManager.Instance.Playing)
+            {
+                yield break;
+            }
+                if (obstacles[idx].activeSelf)
             {
                 if (IsAllActivated())
                 {
@@ -96,6 +109,10 @@ public class ObstacleManager : Singleton<ObstacleManager>
         }
     }
 
+    public void ActivateObstacles()
+    {
+        StartCoroutine(ActiveObstacle());
+    }
     public void DisableObstacle(GameObject obs)
     {
         obs.SetActive(false);

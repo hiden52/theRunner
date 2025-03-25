@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MonoBehaviour, IHitable
 {
     [SerializeField] Vector3[] randomVec3 = new Vector3[3];
     
@@ -23,10 +23,12 @@ public class Obstacle : MonoBehaviour
             GameManager.Instance.StopStage();
 
         }
-        else
-        {
-            ObstacleManager.Instance.DisableObstacle(gameObject);
-        }
+    }
+
+    public void Activate()
+    {
+        Debug.Log("Activate " + gameObject.name);
+        ObstacleManager.Instance.DisableObstacle(gameObject);
     }
     private void OnCollisionEnter(Collision collision)
     {

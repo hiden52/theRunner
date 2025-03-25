@@ -356,6 +356,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/ButtonBehaviour.cs"
 "Assets/Scripts/InteractZone.cs"
+"Assets/Scripts/InterfaceManager.cs"
 "Assets/Scripts/Managers/AudioManager.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/InputManager.cs"
@@ -365,6 +366,7 @@
 "Assets/Scripts/Managers/ResourcesManager.cs"
 "Assets/Scripts/Managers/RoadManager.cs"
 "Assets/Scripts/Managers/SceneryManager.cs"
+"Assets/Scripts/Managers/SpeedManager.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/QuitBtn.cs"
 "Assets/Scripts/RemoveMissingScripts.cs"
@@ -372,6 +374,7 @@
 "Assets/Scripts/Runner.cs"
 "Assets/Scripts/Singleton.cs"
 "Assets/Scripts/Sound.cs"
+"Assets/Scripts/VirtualCamera.cs"
 "Assets/Scripts/Watch.cs"
 -langversion:9.0
 

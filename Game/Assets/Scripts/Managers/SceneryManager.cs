@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class SceneryManager : Singleton<SceneryManager>
 {
     [SerializeField] Image screenImg;
+    public event Action loadEvent;
 
     private void Start()
     {
@@ -43,6 +45,8 @@ public class SceneryManager : Singleton<SceneryManager>
                 {
                     asyncOperation.allowSceneActivation = true;
 
+                    loadEvent?.Invoke();
+                    loadEvent = null;
                     yield break;
                 }
             }
@@ -106,7 +110,7 @@ public class SceneryManager : Singleton<SceneryManager>
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Backspace))
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

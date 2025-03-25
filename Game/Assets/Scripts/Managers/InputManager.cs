@@ -7,6 +7,7 @@ public class InputManager : Singleton<InputManager>
 {
     public Action pressedKeyA;
     public Action pressedKeyD;
+    public Action pressedKeySpace;
     public Action action;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,11 @@ public class InputManager : Singleton<InputManager>
         if (Input.GetKeyDown(KeyCode.D))
         {
             pressedKeyD?.Invoke();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            pressedKeySpace?.Invoke();
         }
 
     }

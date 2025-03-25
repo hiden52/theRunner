@@ -6,8 +6,7 @@ using UnityEngine.UI;
 // Stage Manager로 플레이 관리
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] private float speed;
-    [SerializeField] public float Speed { get { return speed; } }
+    [SerializeField] private float gameSpeed;
     [SerializeField] private float respawnTime;
     [SerializeField] public float RespawnTime { get { return respawnTime; } }
 
@@ -16,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] bool playing;
     public bool Playing { get { return playing; } }
     int m, s, ms, real;
+    float defaultRespawnTime = 2.5f;
 
     private void Update()
     {
@@ -31,8 +31,7 @@ public class GameManager : Singleton<GameManager>
     {
         playing = true;
         gameTime = 0;
-        speed = 20;
-        respawnTime = 2.5f;
+        respawnTime = defaultRespawnTime;
     }
 
     void ClacTime()
@@ -47,19 +46,44 @@ public class GameManager : Singleton<GameManager>
     {
         playing = true;
         MouseManager.Instance.SetState(1);
+        InputManager.Instance.pressedKeySpace -= ResetGame;
+        ObstacleManager.Instance.ActivateObstacles();
     }
     public void StopStage()
     {
         playing = false;
         MouseManager.Instance.SetState(0);
+        InputManager.Instance.pressedKeySpace += ResetGame;
+        
     }
 
     public void IncreasGameLevel()
     {
-        respawnTime = Mathf.Clamp(respawnTime - 0.2f, 1, 3);
-        speed = Mathf.Clamp(speed + 2, 10, 50);
+        respawnTime = Mathf.Clamp(respawnTime - 0.2f, 0.5f, 3);
     }
 
-    
+    public void UpdateGameSpeed()
+    {
+        gameSpeed = SpeedManager.Instance.Speed;
+    }
+
+    public void ResetGame()
+    {
+        Debug.Log("Reset Game");
+        SceneryManager.Instance.loadEvent += ResetStage;
+        StartCoroutine(SceneryManager.Instance.AsynchLoad(1));
+
+        
+       
+    }
+
+    // 현재 다시시작 시 obstacle의 수가 초기 값보다 많은 현상이 발생 #2025.03.25
+    public void ResetStage()
+    {
+        ObstacleManager.Instance.ResetObstacles();
+        SpeedManager.Instance.ResetSpeed();
+        StartStage();
+    }
+
 
 }
