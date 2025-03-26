@@ -329,6 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171985716}
+  - component: {fileID: 171985717}
   - component: {fileID: 171985715}
   m_Layer: 0
   m_Name: Virtual Camera
@@ -356,7 +357,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 490901476}
+  m_Follow: {fileID: 1329980402}
   m_Lens:
     FieldOfView: 60.319607
     OrthographicSize: 5
@@ -392,6 +393,20 @@ Transform:
   - {fileID: 1049501483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 12, y: 180, z: 0}
+--- !u!114 &171985717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171985714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588dafe1e54512541b8f6cc93cba9499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachine: {fileID: 0}
+  followTarget: {fileID: 490901475}
 --- !u!1 &376937311
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +465,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490901476}
-  - component: {fileID: 490901477}
   m_Layer: 0
   m_Name: FollowTarget
   m_TagString: Untagged
@@ -473,33 +487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!54 &490901477
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490901475}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &597864538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1365,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2030809855}
   m_SourcePrefab: {fileID: 100100000, guid: f1473d20cec64a04f8a9e5171e7b16cc, type: 3}
+--- !u!4 &1329980402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1473d20cec64a04f8a9e5171e7b16cc, type: 3}
+  m_PrefabInstance: {fileID: 1329980401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441949899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1464,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 0}
   time: 0
-  levelUp: 0
+  m: 0
+  s: 0
+  ms: 0
 --- !u!1 &1531895121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4683698669332398924, guid: 3780a19b429f44045a362b04de2af646, type: 3}
@@ -1649,6 +1643,55 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00025604732, y: 0.25499988, z: 6.2266994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1905513910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905513912}
+  - component: {fileID: 1905513911}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1905513911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905513910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456b1e542408ee41a4105eb31414255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchObject: {fileID: 1441949899}
+  activeTime: 2.5
+  intervalActiveTime: 0.25
+  maxActiveTime: 2.5
+  minActiveTime: 0.3
+--- !u!4 &1905513912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905513910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2003,3 +2046,4 @@ SceneRoots:
   - {fileID: 1034699048}
   - {fileID: 376937313}
   - {fileID: 1800903685}
+  - {fileID: 1905513912}

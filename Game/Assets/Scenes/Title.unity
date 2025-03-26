@@ -348,10 +348,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 0
-  respawnTime: 0
+  activeTime: 0
   gameTime: 0
   timeText: {fileID: 0}
   playing: 0
+  offsetActiveTime: 0.25
+  MaxActiveTime: 2.5
+  MinActiveTime: 0.3
 --- !u!1 &1148088246
 GameObject:
   m_ObjectHideFlags: 0

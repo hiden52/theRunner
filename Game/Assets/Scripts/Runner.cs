@@ -89,6 +89,8 @@ public class Runner : MonoBehaviour
 
     void AvoidLeft()
     {
+        if (!GameManager.Instance.Playing) return;
+
         if (currentLine != RoadLine.LEFT)
         {
             currentLine--;
@@ -97,6 +99,8 @@ public class Runner : MonoBehaviour
     }
     void AvoidRight()
     {
+        if (!GameManager.Instance.Playing) return;
+
         if (currentLine != RoadLine.RIGHT)
         {
             currentLine++;
@@ -118,8 +122,6 @@ public class Runner : MonoBehaviour
                 InputManager.Instance.pressedKeySpace += ResetRunner;
             }
         }
-        
-       
     }
 
 
@@ -133,7 +135,9 @@ public class Runner : MonoBehaviour
         rb.freezeRotation = false;
         //rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         alive = false;
-        rb.AddRelativeForce(transform.forward * 5 + transform.up * 2, ForceMode.Impulse);
+        // Change follow target
+        FindAnyObjectByType<VirtualCamera>().GetComponent<VirtualCamera>().OnCollision();
+        rb.AddRelativeForce(transform.forward * (2 + SpeedManager.Instance.Speed * 0.1f) + transform.up * (2 + SpeedManager.Instance.Speed * 0.005f), ForceMode.Impulse);
         animator.Play("Death");
 
     }

@@ -7,15 +7,14 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private float gameSpeed;
-    [SerializeField] private float respawnTime;
-    [SerializeField] public float RespawnTime { get { return respawnTime; } }
-
+    [SerializeField] private float activeTime;
     [SerializeField] public float gameTime;
     [SerializeField] Text timeText;
     [SerializeField] bool playing;
+    [SerializeField] float offsetActiveTime = 0.25f;
+    [SerializeField] float MaxActiveTime = 2.5f;
+    [SerializeField] float MinActiveTime = 0.3f;
     public bool Playing { get { return playing; } }
-    int m, s, ms, real;
-    float defaultRespawnTime = 2.5f;
 
     private void Update()
     {
@@ -31,15 +30,6 @@ public class GameManager : Singleton<GameManager>
     {
         playing = true;
         gameTime = 0;
-        respawnTime = defaultRespawnTime;
-    }
-
-    void ClacTime()
-    {
-        real = (int)gameTime;
-        m = real / 60;
-        s = real % 60;
-        ms = Mathf.FloorToInt((gameTime - real) *100);
     }
 
     public void StartStage()
@@ -59,9 +49,20 @@ public class GameManager : Singleton<GameManager>
 
     public void IncreasGameLevel()
     {
-        respawnTime = Mathf.Clamp(respawnTime - 0.2f, 0.5f, 3);
+        activeTime = Mathf.Clamp(activeTime - offsetActiveTime, MinActiveTime, MaxActiveTime);
     }
 
+    public void BindTimeManagerEvent()
+    {
+        TimeManager.Instance.updateTimeEvent += UpdateActiveTime;
+    }
+
+    // 1번 씬이 로드되면 실행하도록 수정하자.
+    // GameManager가 생성되는 0번 씬에서는 TimeManager가 존재하지 않기 때문에 nullref 에러가 발생
+    public void UnbindTimeManagerEvent()
+    {
+        TimeManager.Instance.updateTimeEvent += UpdateActiveTime;
+    }
     public void UpdateGameSpeed()
     {
         gameSpeed = SpeedManager.Instance.Speed;
@@ -72,18 +73,22 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Reset Game");
         SceneryManager.Instance.loadEvent += ResetStage;
         StartCoroutine(SceneryManager.Instance.AsynchLoad(1));
-
-        
-       
     }
+
+
 
     // 현재 다시시작 시 obstacle의 수가 초기 값보다 많은 현상이 발생 #2025.03.25
     public void ResetStage()
     {
         ObstacleManager.Instance.ResetObstacles();
         SpeedManager.Instance.ResetSpeed();
+        TimeManager.Instance.ResetActiveTime();
         StartStage();
     }
 
+    private void UpdateActiveTime()
+    {
+        activeTime = TimeManager.Instance.ActiveTime;
+    }
 
 }

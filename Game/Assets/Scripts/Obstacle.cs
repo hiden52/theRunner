@@ -34,21 +34,9 @@ public class Obstacle : MonoBehaviour, IHitable
     {
         //if(collision.gameObject.com)
     }
-
-
-
-    void Start()
-    {
-    }
     private void OnEnable()
     {
         transform.position = randomVec3[Random.Range(0, randomVec3.Length)];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
 }

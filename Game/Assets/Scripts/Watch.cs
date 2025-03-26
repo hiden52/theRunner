@@ -9,12 +9,14 @@ public class Watch : MonoBehaviour
 {
     [SerializeField] Text timeText;
     [SerializeField] float time;
-    [SerializeField] bool levelUp;
+    public int m, s, ms;
 
     private void Awake()
     {
         timeText = GetComponent<Text>();
-        levelUp = false;
+        m = 0;
+        s = 0;
+        ms = 0;
     }
 
     private void Start()
@@ -24,9 +26,7 @@ public class Watch : MonoBehaviour
 
     IEnumerator Measure()
     {
-        int real;
-
-        int m, s, ms;
+        int real;             
 
         while (true)
         {
@@ -41,17 +41,7 @@ public class Watch : MonoBehaviour
 
                 timeText.text = $"{m} : {s} : {ms}";
 
-                if(!levelUp && (s > 0) && (s % 5 == 0))
-                {
-                    levelUp = true;
-                    SpeedManager.Instance.SpeedUp();
-                    GameManager.Instance.IncreasGameLevel();
-                    
-                }
-                else if (s % 5 != 0)
-                {
-                    levelUp = false;
-                }
+                
             }
 
             yield return null;

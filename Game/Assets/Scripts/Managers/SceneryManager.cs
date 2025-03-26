@@ -45,6 +45,7 @@ public class SceneryManager : Singleton<SceneryManager>
                 {
                     asyncOperation.allowSceneActivation = true;
 
+
                     loadEvent?.Invoke();
                     loadEvent = null;
                     yield break;

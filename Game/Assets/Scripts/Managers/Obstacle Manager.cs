@@ -42,6 +42,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
         {
             CreateObs();
         }
+        countActivated = 0;
 
         #region 이전코드
         //for (int i = 0; i < 5; i++)
@@ -56,6 +57,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     {
         foreach (GameObject obstacle in obstacles)
         {
+            Debug.Log("Destroy " + obstacle.name);
             Destroy(obstacle);
         }
         obstacles.Clear();
@@ -81,7 +83,8 @@ public class ObstacleManager : Singleton<ObstacleManager>
             {
                 yield break;
             }
-                if (obstacles[idx].activeSelf)
+
+            if (obstacles[idx].activeSelf)
             {
                 if (IsAllActivated())
                 {
@@ -104,7 +107,10 @@ public class ObstacleManager : Singleton<ObstacleManager>
 
                     idx = Random.Range(0, obstacles.Count);
                 }
-                yield return new WaitForSeconds(GameManager.Instance.RespawnTime);
+                // WaitForRoutine이 계속 생성됨
+                // yield return new WaitForSeconds(GameManager.Instance.RespawnTime);
+
+                yield return CoroutineCache.WaitForSeconds(TimeManager.Instance.ActiveTime);
             }
         }
     }
