@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private float gameSpeed;
-    [SerializeField] private float activeTime;
-    [SerializeField] public float gameTime;
+    //[SerializeField] private float activeTime;
+    //[SerializeField] public float gameTime;
     [SerializeField] Text timeText;
     [SerializeField] bool playing;
     [SerializeField] float offsetActiveTime = 0.25f;
-    [SerializeField] float MaxActiveTime = 2.5f;
-    [SerializeField] float MinActiveTime = 0.3f;
+    //[SerializeField] float MaxActiveTime = 2.5f;
+    //[SerializeField] float MinActiveTime = 0.3f;
     public bool Playing { get { return playing; } }
 
     private void Update()
@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         playing = true;
-        gameTime = 0;
+        //gameTime = 0;
     }
 
     public void StartStage()
@@ -44,25 +44,30 @@ public class GameManager : Singleton<GameManager>
         playing = false;
         MouseManager.Instance.SetState(0);
         InputManager.Instance.pressedKeySpace += ResetGame;
+        TimeManager.Instance.SetTime(TimeManager.Instance.time);
         
     }
 
-    public void IncreasGameLevel()
-    {
-        activeTime = Mathf.Clamp(activeTime - offsetActiveTime, MinActiveTime, MaxActiveTime);
-    }
+    #region spaghetti 
+    //public void IncreasGameLevel()
+    //{
+    //    activeTime = Mathf.Clamp(activeTime - offsetActiveTime, MinActiveTime, MaxActiveTime);
+    //}
 
-    public void BindTimeManagerEvent()
-    {
-        TimeManager.Instance.updateTimeEvent += UpdateActiveTime;
-    }
 
-    // 1번 씬이 로드되면 실행하도록 수정하자.
-    // GameManager가 생성되는 0번 씬에서는 TimeManager가 존재하지 않기 때문에 nullref 에러가 발생
-    public void UnbindTimeManagerEvent()
-    {
-        TimeManager.Instance.updateTimeEvent += UpdateActiveTime;
-    }
+    //public void BindTimeManagerEvent()
+    //{
+    //    TimeManager.Instance.updateTimeEvent += UpdateActiveTime;
+    //}
+
+    //// 1번 씬이 로드되면 실행하도록 수정하자.
+    //// GameManager가 생성되는 0번 씬에서는 TimeManager가 존재하지 않기 때문에 nullref 에러가 발생
+    //public void UnbindTimeManagerEvent()
+    //{
+    //    TimeManager.Instance.updateTimeEvent -= UpdateActiveTime;
+    //}
+
+    #endregion
     public void UpdateGameSpeed()
     {
         gameSpeed = SpeedManager.Instance.Speed;
@@ -78,6 +83,7 @@ public class GameManager : Singleton<GameManager>
 
 
     // 현재 다시시작 시 obstacle의 수가 초기 값보다 많은 현상이 발생 #2025.03.25
+    // - 해결 : ActiveTime이 초기화 되지 않아서 빠르게 생성되었던 것
     public void ResetStage()
     {
         ObstacleManager.Instance.ResetObstacles();
@@ -86,9 +92,9 @@ public class GameManager : Singleton<GameManager>
         StartStage();
     }
 
-    private void UpdateActiveTime()
-    {
-        activeTime = TimeManager.Instance.ActiveTime;
-    }
+    //private void UpdateActiveTime()
+    //{
+    //    activeTime = TimeManager.Instance.ActiveTime;
+    //}
 
 }

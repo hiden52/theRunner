@@ -9,6 +9,8 @@ public class Watch : MonoBehaviour
 {
     [SerializeField] Text timeText;
     [SerializeField] float time;
+
+    public float GameTime { get { return time; } }
     public int m, s, ms;
 
     private void Awake()

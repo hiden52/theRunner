@@ -14,13 +14,17 @@ public class Runner : MonoBehaviour
 {
     [SerializeField] RoadLine currentLine;
     [SerializeField] Animator animator;
-    [SerializeField] int positionX = 4;
     [SerializeField] Rigidbody rb;
     [SerializeField] float avoidSpeed = 20f;
     [SerializeField] GameObject followTarget;
     [SerializeField] CapsuleCollider capsule;
+    [SerializeField] float animationSpeed;
     private Vector3 defaultPos;
     private Quaternion defaultColliderRotate;
+    private int positionX = 4;
+    private float animSpeedInterval = 0.05f;
+    private float defaultAnimSpeed = 1f;
+
 
     private bool alive;
 
@@ -30,6 +34,7 @@ public class Runner : MonoBehaviour
         animator = GetComponent<Animator>();
         capsule = GetComponent<CapsuleCollider>();
         alive = true;
+        animationSpeed = 1f;
     }
 
     private void Start()
@@ -41,16 +46,18 @@ public class Runner : MonoBehaviour
     private void OnEnable()
     {
         rb.freezeRotation = true;
-        //InputManager.Instance.action += onKeyUpdate;
         InputManager.Instance.pressedKeyA += AvoidLeft;
         InputManager.Instance.pressedKeyD += AvoidRight;
+        SpeedManager.Instance.EIncreaseSpeed += IncreaseAnimationSpeed;
+        SpeedManager.Instance.EResetSpeed += ResetAnimationSpeed;
 
     }
     private void OnDisable()
     {
-        //InputManager.Instance.action -= onKeyUpdate;
         InputManager.Instance.pressedKeyA -= AvoidLeft;
         InputManager.Instance.pressedKeyD -= AvoidRight;
+        SpeedManager.Instance.EIncreaseSpeed -= IncreaseAnimationSpeed;
+        SpeedManager.Instance.EResetSpeed -= ResetAnimationSpeed;
     }
     private void LateUpdate()
     {
@@ -133,13 +140,14 @@ public class Runner : MonoBehaviour
     void Die()
     {
         rb.freezeRotation = false;
-        //rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         alive = false;
-        // Change follow target
-        FindAnyObjectByType<VirtualCamera>().GetComponent<VirtualCamera>().OnCollision();
-        rb.AddRelativeForce(transform.forward * (2 + SpeedManager.Instance.Speed * 0.1f) + transform.up * (2 + SpeedManager.Instance.Speed * 0.005f), ForceMode.Impulse);
         animator.Play("Death");
 
+        // Change follow target
+        FindAnyObjectByType<VirtualCamera>().GetComponent<VirtualCamera>().OnCollision();
+
+        // Applies knockback force on collision based on speed
+        rb.AddRelativeForce(transform.forward * (3) + transform.up * (2), ForceMode.Impulse);
     }
 
     public void ResetRunner()
@@ -150,5 +158,18 @@ public class Runner : MonoBehaviour
         //GetComponent<CapsuleCollider>().transform.rotation = defaultColliderRotate;
 
         InputManager.Instance.pressedKeySpace -= ResetRunner;
+    }
+
+    public void IncreaseAnimationSpeed()
+    {
+        animationSpeed = Mathf.Clamp(animationSpeed + animSpeedInterval, 1, 2);
+        animator.SetFloat("RunSpeed", animationSpeed);
+        //Debug.Log("Animation Speed up : " + animator.GetFloat("RunSpeed"));
+    }
+
+    public void ResetAnimationSpeed()
+    {
+        animationSpeed = defaultAnimSpeed;
+        animator.SetFloat("RunSpeed", animationSpeed);
     }
 }

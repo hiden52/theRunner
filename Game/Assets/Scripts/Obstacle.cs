@@ -27,7 +27,6 @@ public class Obstacle : MonoBehaviour, IHitable
 
     public void Activate()
     {
-        Debug.Log("Activate " + gameObject.name);
         ObstacleManager.Instance.DisableObstacle(gameObject);
     }
     private void OnCollisionEnter(Collision collision)

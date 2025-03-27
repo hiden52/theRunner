@@ -1677,7 +1677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d456b1e542408ee41a4105eb31414255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  watchObject: {fileID: 1441949899}
   activeTime: 2.5
   intervalActiveTime: 0.25
   maxActiveTime: 2.5
@@ -1813,11 +1812,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLine: 0
   animator: {fileID: 0}
-  positionX: 4
   rb: {fileID: 0}
   avoidSpeed: 7
   followTarget: {fileID: 490901475}
   capsule: {fileID: 0}
+  animationSpeed: 0
 --- !u!54 &2030809855
 Rigidbody:
   m_ObjectHideFlags: 0

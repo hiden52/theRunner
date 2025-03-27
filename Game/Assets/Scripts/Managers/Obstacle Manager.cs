@@ -57,7 +57,7 @@ public class ObstacleManager : Singleton<ObstacleManager>
     {
         foreach (GameObject obstacle in obstacles)
         {
-            Debug.Log("Destroy " + obstacle.name);
+            //Debug.Log("Destroy " + obstacle.name);
             Destroy(obstacle);
         }
         obstacles.Clear();

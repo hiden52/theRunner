@@ -45,6 +45,10 @@ public class SceneryManager : Singleton<SceneryManager>
                 {
                     asyncOperation.allowSceneActivation = true;
 
+                    if(index == 1 )
+                    {
+                        //loadEvent += GameManager.Instance.BindTimeManagerEvent;
+                    }
 
                     loadEvent?.Invoke();
                     loadEvent = null;
